@@ -1,0 +1,6 @@
+public class Login_Aplication {
+	public static void main(String[] args) {
+	MyAplication login_app=new MyAplication("Login interface");
+	}
+
+}
