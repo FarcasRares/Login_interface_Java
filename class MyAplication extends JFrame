@@ -1,0 +1,52 @@
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+
+class MyAplication extends JFrame{
+	JLabel username;
+	JLabel password;
+	JFrame f;
+	JTextField user_text;
+	JTextField user_password;
+	JButton Login_Button;
+	MyAplication(String title)
+	{
+		f=new JFrame(title);
+		f.setLayout(null);
+		
+		username=new JLabel("Username");
+		username.setBounds(200,90,120,20);
+		username.setFont(new Font("Arial",Font.BOLD,22));
+		f.add(username);
+		
+		user_text=new JTextField();
+		user_text.setBounds(330,90,160,25);
+		user_text.setFont(new Font("Arial",Font.PLAIN,20));
+		f.add(user_text);
+		
+		password=new JLabel("Password");
+		password.setBounds(200,150,120,20);
+		password.setFont(new Font("Arial",Font.BOLD,22));
+		f.add(password);
+		
+		user_password=new JTextField();
+		user_password.setBounds(330,150,160,25);
+		user_password.setFont(new Font("Arial",Font.BOLD,22));
+		f.add(user_password);
+		
+		Login_Button=new JButton("Login");
+		Login_Button.setFont(new Font("Arial",Font.BOLD,22));
+		Login_Button.setBounds(310,200,100,50);
+		f.add(Login_Button);
+		
+	
+		f.getContentPane().setBackground(new Color(204,221,255));
+		f.setVisible(true);
+		f.setBounds(200,200,700,400);
+	}
+	
+}
