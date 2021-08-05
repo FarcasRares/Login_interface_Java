@@ -1,3 +1,6 @@
+package Login;
+//Farcas Rares
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -7,6 +10,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+
+
 
 class MyAplication extends JFrame{
 	JLabel username;
@@ -50,53 +55,19 @@ class MyAplication extends JFrame{
 		Register_Button.setFont(new Font("Arial",Font.BOLD,22));
 		Register_Button.setBounds(210,200,140,50);
 		Register_Button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {https://github.com/FarcasRares/Sing_in_Interface_
+			public void actionPerformed(ActionEvent e) {
 				username.setVisible(false);
 				password.setVisible(false);
 				user_text.setVisible(false);
 				user_password.setVisible(false);
 				Login_Button.setVisible(false);
 				Register_Button.setVisible(false);
-			   // Panel regi=new Panel(); ************************************
-				
-				JLabel enter_username=new JLabel("Username :");
-			    enter_username.setBounds(205,80,300,30);
-			    enter_username.setFont(new Font("Arial",Font.BOLD,20));
-			    f.add(enter_username);
-			    
-			    JLabel enter_password=new JLabel("Password :");
-			    enter_password.setBounds(210,130,200,30);
-			    enter_password.setFont(new Font("Arial",Font.BOLD,20));
-			    f.add(enter_password);
-			    
-			    JLabel repeat_password=new JLabel("Repeat :");
-			    repeat_password.setBounds(235,180,200,30);
-			    repeat_password.setFont(new Font("Arial",Font.BOLD,20));
-			    f.add(repeat_password);
-			    
-			    JTextField register_username=new JTextField();
-			    register_username.setBounds(320,80,180,30);
-			    register_username.setFont(new Font("Arial",Font.PLAIN,20));
-			    f.add(register_username);
-			    
-			    JPasswordField register_password=new JPasswordField();
-			    register_password.setBounds(320,130,180,30);
-			    register_password.setFont(new Font("Arial",Font.PLAIN,20));
-			    f.add(register_password);
-			    
-			    JPasswordField register_repeat_password=new JPasswordField();
-			    register_repeat_password.setBounds(320,180,180,30);
-			    register_repeat_password.setFont(new Font("Arial",Font.PLAIN,20));
-			    f.add(register_repeat_password);
-			    
-			    JButton submit=new JButton("Submit");
-			    submit.setBounds(360,220,120,30);
-			    submit.setFont(new Font("Arial",Font.BOLD,22));
-				f.add(submit);
+				RegisterPanel register=new RegisterPanel(f);
 			}
 			
 		});
 		f.add(Register_Button);
+		
 		
 		user_password.setDocument(new JTextFieldLimit(15));
 		user_text.setDocument(new JTextFieldLimit(15));
@@ -105,4 +76,13 @@ class MyAplication extends JFrame{
 		f.setBounds(200,200,700,400);
 	}
 	
+}
+
+
+
+public class Login_Aplication {
+	public static void main(String[] args) {
+	MyAplication login_app=new MyAplication("Login interface");
+	}
+
 }
