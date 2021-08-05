@@ -12,7 +12,6 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 
-
 class MyAplication extends JFrame{
 	JLabel username;
 	JLabel password;
@@ -76,13 +75,4 @@ class MyAplication extends JFrame{
 		f.setBounds(200,200,700,400);
 	}
 	
-}
-
-
-
-public class Login_Aplication {
-	public static void main(String[] args) {
-	MyAplication login_app=new MyAplication("Login interface");
-	}
-
 }
