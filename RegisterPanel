@@ -16,7 +16,6 @@ RegisterPanel(JFrame f)
 register=new JPanel();
 register.setLayout(null);
 
-
 JLabel enter_username=new JLabel("Username :");
 enter_username.setBounds(205,80,300,30);
 enter_username.setFont(new Font("Arial",Font.BOLD,20));
