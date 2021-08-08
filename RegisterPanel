@@ -1,7 +1,10 @@
 package Login;
 
+
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -11,10 +14,11 @@ import javax.swing.JTextField;
 
 public class RegisterPanel extends JPanel {
 	JPanel register;
-RegisterPanel(JFrame f)
+RegisterPanel(JFrame f,JPanel i)
 {
 register=new JPanel();
 register.setLayout(null);
+
 
 JLabel enter_username=new JLabel("Username :");
 enter_username.setBounds(205,80,300,30);
@@ -55,6 +59,13 @@ JButton close=new JButton("Close");
 close.setBounds(220,220,120,30);
 close.setFont(new Font("Arial",Font.BOLD,22));
 register.add(close);
+close.addActionListener(new ActionListener() {
+	public void actionPerformed(ActionEvent e) {
+		register.setVisible(false);
+	    i.setVisible(true);
+	}
+	
+});
 
 register_username.setDocument(new JTextFieldLimit(15));
 register_password.setDocument(new JTextFieldLimit(15));
