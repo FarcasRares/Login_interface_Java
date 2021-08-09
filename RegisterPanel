@@ -63,7 +63,6 @@ close.addActionListener(new ActionListener() {
 		register.setVisible(false);
 	    i.setVisible(true);
 	}
-	
 });
 
 register_username.setDocument(new JTextFieldLimit(15));
