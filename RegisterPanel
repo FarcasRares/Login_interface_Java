@@ -22,7 +22,6 @@ register.setLayout(null);
 confirmation=new JLabel("");
 confirmation.setBounds(240,270,280,30);
 confirmation.setFont(new Font("Arial",Font.BOLD,22));
-
 confirmation.setVisible(false);
 register.add(confirmation);
 
@@ -62,14 +61,19 @@ submit.setFont(new Font("Arial",Font.BOLD,22));
 submit.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e) {
-				String s1,s2;
+				String s1,s2,s3;
 				s1=register_password.getText();
 				s2=register_password.getText();
-				if (s1.equals(s2)) {
-					
+				s3=register_username.getText();
+				if (s1.equals(s2) && s3.length()>0) {
 					confirmation.setText("Registration Successful!");
+					confirmation.setForeground(Color.GREEN);
 					confirmation.setVisible(true);
-					
+				}
+				else {
+					confirmation.setText("Invalid!");
+					confirmation.setForeground(Color.RED);
+					confirmation.setVisible(true);
 				}
 				
 			}
