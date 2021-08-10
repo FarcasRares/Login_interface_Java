@@ -13,11 +13,18 @@ import javax.swing.JTextField;
 
 public class RegisterPanel extends JPanel {
 	JPanel register;
+	JLabel confirmation;
 RegisterPanel(JFrame f,JPanel i)
 {
 register=new JPanel();
 register.setLayout(null);
 
+confirmation=new JLabel("");
+confirmation.setBounds(240,270,280,30);
+confirmation.setFont(new Font("Arial",Font.BOLD,22));
+
+confirmation.setVisible(false);
+register.add(confirmation);
 
 JLabel enter_username=new JLabel("Username :");
 enter_username.setBounds(205,80,300,30);
@@ -52,6 +59,22 @@ register.add(register_repeat_password);
 JButton submit=new JButton("Submit");
 submit.setBounds(360,220,120,30);
 submit.setFont(new Font("Arial",Font.BOLD,22));
+submit.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e) {
+				String s1,s2;
+				s1=register_password.getText();
+				s2=register_password.getText();
+				if (s1.equals(s2)) {
+					
+					confirmation.setText("Registration Successful!");
+					confirmation.setVisible(true);
+					
+				}
+				
+			}
+	
+		});
 register.add(submit);
 
 JButton close=new JButton("Close");
@@ -63,11 +86,13 @@ close.addActionListener(new ActionListener() {
 		register.setVisible(false);
 	    i.setVisible(true);
 	}
+	
 });
 
 register_username.setDocument(new JTextFieldLimit(15));
 register_password.setDocument(new JTextFieldLimit(15));
 register_repeat_password.setDocument(new JTextFieldLimit(15));
+
 
 register.setBackground(new Color(204,221,255));
 register.setBounds(0,0,700,400);
