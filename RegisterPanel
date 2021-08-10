@@ -63,7 +63,7 @@ submit.addActionListener(new ActionListener()
 			public void actionPerformed(ActionEvent e) {
 				String s1,s2,s3;
 				s1=register_password.getText();
-				s2=register_password.getText();
+				s2=register_repeat_password.getText();
 				s3=register_username.getText();
 				if (s1.equals(s2) && s3.length()>0) {
 					confirmation.setText("Registration Successful!");
