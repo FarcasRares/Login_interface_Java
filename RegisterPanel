@@ -14,7 +14,9 @@ import javax.swing.JTextField;
 public class RegisterPanel extends JPanel {
 	JPanel register;
 	JLabel confirmation;
-RegisterPanel(JFrame f,JPanel i)
+	JLabel informations;
+	int index=0;
+RegisterPanel(JFrame f,JPanel i,users[] people)
 {
 register=new JPanel();
 register.setLayout(null);
@@ -24,6 +26,11 @@ confirmation.setBounds(240,270,280,30);
 confirmation.setFont(new Font("Arial",Font.BOLD,22));
 confirmation.setVisible(false);
 register.add(confirmation);
+
+informations=new JLabel("<html>Please enter an username with more than six characters, and <br> a password with more than three characters</html>");
+informations.setBounds(100,10,600,70);
+informations.setFont(new Font("Arial",Font.PLAIN,20));
+register.add(informations);
 
 JLabel enter_username=new JLabel("Username :");
 enter_username.setBounds(205,80,300,30);
@@ -65,10 +72,16 @@ submit.addActionListener(new ActionListener()
 				s1=register_password.getText();
 				s2=register_repeat_password.getText();
 				s3=register_username.getText();
-				if (s1.equals(s2) && s3.length()>0) {
+				if (s1.equals(s2) && s3.length()>6 && s1.length()>3) {
 					confirmation.setText("Registration Successful!");
 					confirmation.setForeground(Color.GREEN);
 					confirmation.setVisible(true);
+					register_password.setText("");
+					register_repeat_password.setText("");
+					register_username.setText("");
+					people[index]=new users(s3,s1);
+					index++;
+					
 				}
 				else {
 					confirmation.setText("Invalid!");
