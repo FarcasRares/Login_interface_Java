@@ -1,8 +1,10 @@
 package Login;
 //Farcas Rares
 
-public class Login_Aplication {
+public class main {
 	public static void main(String[] args) {
-	MyAplication login_app=new MyAplication("Login interface");
+	users[] people=new users[50];
+	MyAplication login_app=new MyAplication("Login interface",people);
 	}
+
 }
