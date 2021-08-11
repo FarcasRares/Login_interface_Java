@@ -22,7 +22,8 @@ class MyAplication extends JFrame{
 	JButton Login_Button;
 	JButton Register_Button;
 	public JPanel intro;
-	MyAplication(String title)
+	JLabel confirmation;
+	MyAplication(String title,users []people)
 	{
 		f=new JFrame(title);
 		f.setLayout(null);
@@ -51,9 +52,22 @@ class MyAplication extends JFrame{
 		intro.add(user_password);
 		user_password.setDocument(new JTextFieldLimit(15));
 		
+		confirmation=new JLabel("");
+		confirmation.setBounds(240,270,280,30);
+		confirmation.setFont(new Font("Arial",Font.BOLD,22));
+		confirmation.setVisible(false);
+		f.add(confirmation);
+		
 		Login_Button=new JButton("Login");
 		Login_Button.setFont(new Font("Arial",Font.BOLD,22));
 		Login_Button.setBounds(360,200,100,50);
+		Login_Button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				
+			}
+			
+		});
 		intro.add(Login_Button);
 		
 		Register_Button=new JButton("Register");
@@ -62,7 +76,7 @@ class MyAplication extends JFrame{
 		Register_Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				intro.setVisible(false);
-				RegisterPanel register=new RegisterPanel(f,intro);
+				RegisterPanel register=new RegisterPanel(f,intro,people);
 			
 			}
 			
