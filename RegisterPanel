@@ -4,6 +4,10 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -16,7 +20,7 @@ public class RegisterPanel extends JPanel {
 	JLabel confirmation;
 	JLabel informations;
 	int index=0;
-RegisterPanel(JFrame f,JPanel i,users[] people)
+RegisterPanel(JFrame f,JPanel i)
 {
 register=new JPanel();
 register.setLayout(null);
@@ -79,8 +83,16 @@ submit.addActionListener(new ActionListener()
 					register_password.setText("");
 					register_repeat_password.setText("");
 					register_username.setText("");
-					people[index]=new users(s3,s1);
-					index++;
+					File file = new File("Users_Database.txt");
+					FileWriter fw;
+					try {
+						fw = new FileWriter(file, true);
+						fw.write(s3+"\n"+s1);
+						fw.close();
+					} catch (IOException e1) {
+						e1.printStackTrace();
+					}
+					
 					
 				}
 				else {
