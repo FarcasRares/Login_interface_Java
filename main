@@ -3,8 +3,7 @@ package Login;
 
 public class main {
 	public static void main(String[] args) {
-	users[] people=new users[50];
-	MyAplication login_app=new MyAplication("Login interface",people);
+	MyAplication login_app=new MyAplication("Login interface");
 	}
 
 }
