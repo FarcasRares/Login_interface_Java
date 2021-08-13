@@ -4,6 +4,9 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -23,7 +26,8 @@ class MyAplication extends JFrame{
 	JButton Register_Button;
 	public JPanel intro;
 	JLabel confirmation;
-	MyAplication(String title,users []people)
+	String[] getDatabase=new String[100];
+	MyAplication(String title)
 	{
 		f=new JFrame(title);
 		f.setLayout(null);
@@ -63,6 +67,37 @@ class MyAplication extends JFrame{
 		Login_Button.setBounds(360,200,100,50);
 		Login_Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				try {
+					BufferedReader in=new BufferedReader(new FileReader("Users_Database.txt"));
+					int i=0;
+					int nr=0;
+					int ok=0;
+					while((getDatabase[i]=in.readLine()) != null) {
+						i++;
+						nr++;
+					}
+					for (i=0;i<nr;i++)
+					{
+						if (getDatabase[i].equals(user_text.getText()) && getDatabase[i+1].equals(user_password.getText()))
+						{
+							confirmation.setText("Authentification Successful!");
+							confirmation.setForeground(Color.GREEN);
+							confirmation.setVisible(true);
+							ok=1;
+						}
+					}
+					if (ok==0)
+					{
+						confirmation.setText("Invalid!");
+						confirmation.setForeground(Color.RED);
+						confirmation.setVisible(true);
+					}
+					in.close();
+				}
+				catch(IOException e1)
+				{
+					System.out.println("Error "+e1);
+				}
 			
 				
 			}
@@ -76,7 +111,7 @@ class MyAplication extends JFrame{
 		Register_Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				intro.setVisible(false);
-				RegisterPanel register=new RegisterPanel(f,intro,people);
+				RegisterPanel register=new RegisterPanel(f,intro);
 			
 			}
 			
