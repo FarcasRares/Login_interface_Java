@@ -59,7 +59,7 @@ class MyAplication extends JFrame{
 		confirmation.setBounds(240,270,280,30);
 		confirmation.setFont(new Font("Arial",Font.BOLD,22));
 		confirmation.setVisible(false);
-		f.add(confirmation);
+		intro.add(confirmation);
 		
 		Login_Button=new JButton("Login");
 		Login_Button.setFont(new Font("Arial",Font.BOLD,22));
