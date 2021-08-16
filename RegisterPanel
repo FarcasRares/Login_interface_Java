@@ -86,7 +86,7 @@ submit.addActionListener(new ActionListener()
 					FileWriter fw;
 					try {
 						fw = new FileWriter(file, true);
-						fw.write(s3+"\n"+s1);
+						fw.write("\n"+s3+"\n"+s1);
 						fw.close();
 					} catch (IOException e1) {
 						e1.printStackTrace();
