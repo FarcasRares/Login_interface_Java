@@ -15,6 +15,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 
+
 class MyAplication extends JFrame{
 	JLabel username;
 	JLabel password;
@@ -25,6 +26,7 @@ class MyAplication extends JFrame{
 	JButton Register_Button;
 	public JPanel intro;
 	JLabel confirmation;
+	JButton Quit;
 	String[] getDatabase=new String[100];
 	MyAplication(String title)
 	{
@@ -32,6 +34,7 @@ class MyAplication extends JFrame{
 		f.setLayout(null);
 		intro=new JPanel();
 		intro.setLayout(null);
+		
 		
 		username=new JLabel("Username");
 		username.setBounds(200,90,120,20);
@@ -56,7 +59,7 @@ class MyAplication extends JFrame{
 		user_password.setDocument(new JTextFieldLimit(15));
 		
 		confirmation=new JLabel("");
-		confirmation.setBounds(240,270,280,30);
+		confirmation.setBounds(240,270,350,30);
 		confirmation.setFont(new Font("Arial",Font.BOLD,22));
 		confirmation.setVisible(false);
 		intro.add(confirmation);
@@ -83,6 +86,7 @@ class MyAplication extends JFrame{
 							confirmation.setForeground(Color.GREEN);
 							confirmation.setVisible(true);
 							ok=1;
+							HelloPanel h=new HelloPanel(f);
 						}
 					}
 					if (ok==0)
@@ -104,6 +108,7 @@ class MyAplication extends JFrame{
 		});
 		intro.add(Login_Button);
 		
+		
 		Register_Button=new JButton("Register");
 		Register_Button.setFont(new Font("Arial",Font.BOLD,22));
 		Register_Button.setBounds(210,200,140,50);
@@ -116,6 +121,17 @@ class MyAplication extends JFrame{
 			
 		});
 		intro.add(Register_Button);
+		
+		Quit=new JButton("Quit");
+		Quit.setFont(new Font("Arial",Font.BOLD,22));
+		Quit.setBounds(20,320,100,30);
+		Quit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+				
+			}			
+		});
+		intro.add(Quit);
 		
 		intro.setBounds(0,0,700,400);
 		intro.setVisible(true);
