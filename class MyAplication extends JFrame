@@ -15,7 +15,6 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 
-
 class MyAplication extends JFrame{
 	JLabel username;
 	JLabel password;
