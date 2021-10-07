@@ -7,7 +7,7 @@ Here you can notice that you have options like Register, Quit or Login (if you a
 <br></br>
 <h2> Register Panel </h2>
   <br></br>
-![2](https://user-images.githubusercontent.com/81974576/136444047-c28b679c-29fd-4c38-a0c1-864c6be93462.png)
+<img src="https://github.com/FarcasRares/Login_interface_Java/blob/main/Images/Register.png")
 <br></br>
 Here you can create an account with an username and the password. The data you enter will be saved in a text file. Then, when you want to login, the program will search in the respective file for your username and password and will check if they match or not.
 <br></br>
@@ -15,6 +15,6 @@ Here you can create an account with an username and the password. The data you e
 <br></br>
 This is how it will look like if you register and login with the right datas.
 <br></br>
-![3](https://user-images.githubusercontent.com/81974576/136444297-38b3e8dd-cf39-458d-9a20-24bae6838b34.png)
+<img src="https://github.com/FarcasRares/Login_interface_Java/blob/main/Images/Login.png")
 <br></br>
 
