@@ -1,7 +1,7 @@
 <h1> Login interface in Java </h1>
 This is how it looks when you run the code :
 <br></br>
-![First](/Images/First.png)
+!(/Images/First.png)
 <br></br>
 Here you can notice that you have options like Register, Quit or Login (if you already registered with an username and a password).
 <br></br>
