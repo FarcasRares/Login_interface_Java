@@ -1,7 +1,7 @@
 <h1> Login interface in Java </h1>
 This is how it looks when you run the code :
 <br></br>
-![1](https://user-images.githubusercontent.com/81974576/136443701-35c593eb-201a-4a7f-b9c3-2a78bfc89a68.png)
+![1](https://github.com/FarcasRares/Login_interface_Java/blob/main/Images/First.png)
 <br></br>
 Here you can notice that you have options like Register, Quit or Login (if you already registered with an username and a password).
 <br></br>
