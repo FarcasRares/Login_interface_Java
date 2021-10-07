@@ -1,5 +1,5 @@
 <h1> Login interface in Java </h1>
-This is how it looks when youu run the code :
+This is how it looks when you run the code :
 <br></br>
 ![1](https://user-images.githubusercontent.com/81974576/136443701-35c593eb-201a-4a7f-b9c3-2a78bfc89a68.png)
 <br></br>
